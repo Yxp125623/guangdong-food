@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="广东早茶文化——一盅两件的慢生活哲学，从叹早茶的规矩到茶点里的讲究，读懂老广的悠闲时光。">
+  <title>早茶人生 · 粤味广东美食网</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero { position: relative; min-height: 56vh; display: flex; align-items: center; color: #fff; padding-top: 100px; overflow: hidden; }
+    .page-hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+    .page-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(20,12,8,.85), rgba(20,12,8,.35)); }
+    .page-hero h1 { font-family: var(--font-serif); font-size: clamp(40px,7vw,76px); margin: 10px 0; letter-spacing: 2px; }
+    .page-hero p { color: rgba(255,255,255,.82); max-width: 560px; }
+    .crumb { font-size: 13px; color: var(--gold-light); letter-spacing: 1px; }
+    .crumb a:hover { text-decoration: underline; }
+
+    /* 早茶三步骤卡 */
+    .tea-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .tea-step { text-align: center; padding: 34px 24px; background: var(--paper); border-radius: 20px; box-shadow: var(--shadow-sm); transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+    .tea-step:hover { transform: translateY(-10px); box-shadow: var(--shadow-md); }
+    .tea-step__icon { width: 76px; height: 76px; margin: 0 auto 18px; border-radius: 50%; display: grid; place-items: center; font-size: 36px; background: linear-gradient(135deg, rgba(193,39,45,.1), rgba(212,162,76,.15)); }
+    .tea-step h3 { font-family: var(--font-serif); font-size: 22px; margin: 0 0 8px; }
+    .tea-step p { color: var(--ink-soft); font-size: 14px; margin: 0; }
+
+    /* 茶点画廊 */
+    .dimsum-gallery { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+    .dimsum-item { border-radius: 16px; overflow: hidden; position: relative; aspect-ratio: 1; box-shadow: var(--shadow-sm); transition: transform .4s var(--ease); }
+    .dimsum-item:hover { transform: translateY(-6px) scale(1.02); }
+    .dimsum-item img { width: 100%; height: 100%; object-fit: cover; }
+    .dimsum-item span { position: absolute; inset: auto 0 0 0; padding: 28px 14px 12px; color: #fff; font-weight: 700; background: linear-gradient(transparent, rgba(20,12,8,.85)); }
+    @media(max-width:900px){ .tea-steps{grid-template-columns:1fr;} .dimsum-gallery{grid-template-columns:repeat(2,1fr);} }
+  </style>
+</head>
+<body>
+
+  <!-- 导航 -->
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a href="index.htm" class="brand"><span class="seal">粵</span><span class="name">粤味<small>YUE WEI · GUANGDONG</small></span></a>
+      <button class="hamburger" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.htm" data-page="index.htm">首页</a></li>
+        <li><a href="dishes.htm" data-page="dishes.htm">经典名菜</a></li>
+        <li><a href="morning-tea.htm" data-page="morning-tea.htm">早茶人生</a></li>
+        <li><a href="map.htm" data-page="map.htm">寻味地图</a></li>
+        <li><a href="street.htm" data-page="street.htm">街头烟火</a></li>
+        <li><a href="about.htm" data-page="about.htm">关于我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 页头 -->
+  <section class="page-hero">
+    <img class="page-hero__bg" src="images/teatime.jpg" alt="广东早茶">
+    <div class="wrap">
+      <div class="crumb"><a href="index.htm">首页</a> / 早茶人生</div>
+      <h1>叹早茶 · 慢时光</h1>
+      <p>一盅两件，一坐半日。早茶不是一顿饭，是广东人写给生活的情书。</p>
+    </div>
+  </section>
+
+  <!-- 早茶步骤 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">The Ritual</span>
+        <h2 class="h2">叹早茶的<span class="accent">仪式感</span></h2>
+        <p class="lead center">从落座到埋单，每一步都有自己的讲究。</p>
+      </div>
+      <div class="tea-steps">
+        <div class="tea-step reveal"><div class="tea-step__icon">🍵</div><h3>一盅茶</h3><p>普洱、菊普或铁观音，先点一壶茶。茶是早茶的灵魂，用以清口、助消化，更是闲聊的由头。</p></div>
+        <div class="tea-step reveal" data-delay="1"><div class="tea-step__icon">🥟</div><h3>两件点心</h3><p>虾饺、烧卖、叉烧包……"两件"只是起步，真正吃起来，桌上很快堆起小山。</p></div>
+        <div class="tea-step reveal" data-delay="2"><div class="tea-step__icon">📰</div><h3>叹世界</h3><p>看报纸、聊家常、谈生意。慢悠悠的一上午，把日子过成了诗，这便是"叹"的真谛。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 时间轴 -->
+  <section class="section section--tint">
+    <div class="wrap">
+      <div class="sec-head center reveal"><span class="eyebrow">A Morning Timeline</span><h2 class="h2">一个茶楼的<span class="accent">清晨</span></h2></div>
+      <div class="timeline">
+        <div class="tl-item reveal"><div class="tl-time">06:30　晨光初现</div><h3>茶楼开档</h3><p>师傅们凌晨就开始备料，第一笼虾饺在蒸汽中晶莹剔透，老茶客已端到坐在熟悉的卡座。</p></div>
+        <div class="tl-item reveal"><div class="tl-time">08:00　人声渐沸</div><h3>一盅两件上桌</h3><p>推车仔穿梭于桌椅之间，"虾饺烧卖叉烧包——"的吆喝声，是茶楼最动人的背景音乐。</p></div>
+        <div class="tl-item reveal"><div class="tl-time">10:30　闲话家常</div><h3>街坊的社交场</h3><p>一杯茶续了又续，从家常聊到时事。早茶桌，是这座城市最温暖的客厅。</p></div>
+        <div class="tl-item reveal"><div class="tl-time">12:00　意犹未尽</div><h3>埋单散席</h3><p>伙计一声"埋单"，一上午的惬意画上句点。带着满足与闲适，迎接新的一天。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 茶点画廊 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head center reveal"><span class="eyebrow">Dim Sum Gallery</span><h2 class="h2">舌尖上的<span class="accent">百花齐放</span></h2></div>
+      <div class="dimsum-gallery">
+        <div class="dimsum-item reveal"><img src="images/hero-dimsum.jpg" alt="虾饺" loading="lazy"><span>水晶虾饺</span></div>
+        <div class="dimsum-item reveal" data-delay="1"><img src="images/dish-rice.jpg" alt="海鲜炒饭" loading="lazy"><span>海鲜炒饭</span></div>
+        <div class="dimsum-item reveal" data-delay="2"><img src="images/dish-chicken.jpg" alt="炸物" loading="lazy"><span>酥炸点心</span></div>
+        <div class="dimsum-item reveal" data-delay="3"><img src="images/teatime.jpg" alt="茶" loading="lazy"><span>功夫茶</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 折叠问答 -->
+  <section class="section section--tint">
+    <div class="wrap">
+      <div class="sec-head center reveal"><span class="eyebrow">Good to Know</span><h2 class="h2">叹早茶<span class="accent">冷知识</span></h2></div>
+      <div class="acc reveal">
+        <div class="acc__item open"><button class="acc__head">为什么广东人管喝早茶叫"叹"？<span class="icon">+</span></button><div class="acc__body"><p>"叹"在粤语里有享受、悠闲之意。它强调的是那份从容不迫的心境——喝茶不是为了赶时间，而是为了享受过程。一字之差，道尽岭南人的生活哲学。</p></div></div>
+        <div class="acc__item"><button class="acc__head">"一盅两件"到底是什么？<span class="icon">+</span></button><div class="acc__body"><p>"一盅"指一壶茶，"两件"指两样点心。这是早茶最经典的起步配置。当然，真到了茶楼，很少有人只点两件——往往一不留神就点了满满一桌。</p></div></div>
+        <div class="acc__item"><button class="acc__head">早茶为什么要"揭盖续水"？<span class="icon">+</span></button><div class="acc__body"><p>这是老广的暗号：把茶壶盖揭开斜靠在壶边，伙计看到就会主动来续热水。无需开口，一个动作便心意相通，是茶楼里默契的温情。</p></div></div>
+        <div class="acc__item"><button class="acc__head">点心车上的"咖喱牛肚"属于哪一类？<span class="icon">+</span></button><div class="acc__body"><p>它属于"蒸笼点心"里的荤点。传统茶楼用推车仔推送点心，客人看中哪笼直接拿，丰俭由人，这也是早茶"看得见、选得着"的乐趣所在。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand"><a href="index.htm" class="brand"><span class="seal">粵</span><span class="name">粤味<small>YUE WEI · GUANGDONG</small></span></a><p style="margin-top:18px;">一盅两件，食在广东。用味蕾读懂岭南的烟火与温情。</p></div>
+      <div><h4>快速导航</h4><ul><li><a href="index.htm">首页</a></li><li><a href="dishes.htm">经典名菜</a></li><li><a href="morning-tea.htm">早茶人生</a></li><li><a href="map.htm">寻味地图</a></li></ul></div>
+      <div><h4>更多精彩</h4><ul><li><a href="street.htm">街头烟火</a></li><li><a href="about.htm">关于我们</a></li><li><a href="about.htm#contact">留言反馈</a></li></ul></div>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="回到顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

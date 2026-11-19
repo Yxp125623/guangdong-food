@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="粤味·广东美食网 —— 探寻广府、潮汕、客家的地道风味，从一盅早茶到街头烟火，带你读懂广东人的舌尖江湖。">
+  <title>粤味 · 广东美食网</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 首页专属样式 */
+    /* 深色 Hero 上的幽灵按钮：提高描边与文字对比度，保证可读性 */
+    .hero__actions .btn-ghost { border-color: rgba(255,255,255,.85); color: #fff; }
+    .hero__actions .btn-ghost:hover { background: #fff; color: var(--ink); }
+    .featured { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 22px; }
+    .featured .card:first-child { grid-row: span 2; }
+    .featured .card:first-child .card__media { aspect-ratio: 4/5; }
+    .story { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .story__visual { position: relative; padding: 20px; }
+    .story__visual img { border-radius: 24px; box-shadow: var(--shadow-lg); }
+    .story__visual .frame { position: absolute; inset: 0; border: 2px solid var(--gold); border-radius: 34px; transform: rotate(3deg); z-index: -1; }
+    .story__visual .floating-card {
+      position: absolute; right: -10px; bottom: -20px; background: var(--paper);
+      padding: 18px 22px; border-radius: 16px; box-shadow: var(--shadow-lg); z-index: 3;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .floating-card .em { font-size: 34px; }
+    .floating-card b { font-family: var(--font-serif); font-size: 18px; display: block; }
+    .floating-card small { color: var(--ink-soft); font-size: 12px; }
+    @media(max-width: 900px){ .featured{grid-template-columns:1fr 1fr;} .featured .card:first-child{grid-row:auto;} .featured .card:first-child .card__media{aspect-ratio:4/3;} .story{grid-template-columns:1fr;gap:40px;} }
+    @media(max-width: 560px){ .featured{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 导航 ===== -->
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a href="index.htm" class="brand" aria-label="粤味首页">
+        <span class="seal">粵</span>
+        <span class="name">粤味<small>YUE WEI · GUANGDONG</small></span>
+      </a>
+      <button class="hamburger" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.htm" data-page="index.htm">首页</a></li>
+        <li><a href="dishes.htm" data-page="dishes.htm">经典名菜</a></li>
+        <li><a href="morning-tea.htm" data-page="morning-tea.htm">早茶人生</a></li>
+        <li><a href="map.htm" data-page="map.htm">寻味地图</a></li>
+        <li><a href="street.htm" data-page="street.htm">街头烟火</a></li>
+        <li><a href="about.htm" data-page="about.htm">关于我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero 首屏 ===== -->
+  <section class="hero">
+    <img class="hero-slide active" src="images/hero-dimsum.jpg" alt="广东早茶虾饺蒸笼">
+    <img class="hero-slide" src="images/table.jpg" alt="精致粤菜餐桌">
+    <img class="hero-slide" src="images/street2.jpg" alt="餐厅美食氛围">
+    <div class="hero__stamp">食在<br>广东</div>
+    <div class="hero__inner wrap">
+      <span class="hero__tag">◆ 寻味岭南 · 一口入魂</span>
+      <h1 class="hero__title">一盅两件<br><span class="stroke">食在广东</span></h1>
+      <p class="hero__desc">从西关老茶楼的虾饺烧卖，到深夜街头的牛杂糖水；从广府的清鲜、潮汕的浓香，到客家的醇厚——跟我一起，用味蕾读懂这座岭南。</p>
+      <div class="hero__actions">
+        <a href="dishes.htm" class="btn btn-primary">探索经典名菜 <span class="arrow">→</span></a>
+        <a href="morning-tea.htm" class="btn btn-ghost">走进早茶世界</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <div class="mouse"></div>
+      <span>SCROLL DOWN</span>
+    </div>
+  </section>
+
+  <!-- ===== 数据条 ===== -->
+  <section class="section section--tint" style="padding:50px 0;">
+    <div class="wrap stats">
+      <div class="stat reveal"><div class="stat__num" data-count="3">0</div><div class="stat__label">大菜系流派</div></div>
+      <div class="stat reveal" data-delay="1"><div class="stat__num" data-count="2000" data-suffix="+">0</div><div class="stat__label">年饮食文化</div></div>
+      <div class="stat reveal" data-delay="2"><div class="stat__num" data-count="108" data-suffix="道">0</div><div class="stat__label">经典名菜</div></div>
+      <div class="stat reveal" data-delay="3"><div class="stat__num" data-count="24" data-suffix="h">0</div><div class="stat__label">不打烊的烟火</div></div>
+    </div>
+  </section>
+
+  <!-- ===== 招牌推荐 ===== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head sec-head--split reveal">
+        <div>
+          <span class="eyebrow">Signature Dishes</span>
+          <h2 class="h2">招牌<span class="accent">必尝</span></h2>
+          <p class="lead">几道绕不开的岭南味道，藏着广东人对"鲜"的极致讲究。</p>
+        </div>
+        <a href="dishes.htm" class="btn btn-ghost">查看全部名菜 <span class="arrow">→</span></a>
+      </div>
+      <div class="featured">
+        <article class="card reveal">
+          <div class="card__media"><span class="card__badge">镇店之宝</span><img src="images/hero-dimsum.jpg" alt="水晶虾饺" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">水晶虾饺皇</h3>
+            <p class="card__text">薄如蝉翼的水晶皮，裹着整颗弹牙鲜虾。一口咬开，是广府茶楼里最讲究的那口"鲜"。</p>
+            <div class="card__meta"><span>广府 · 点心</span><span>★★★★★</span></div>
+          </div>
+        </article>
+        <article class="card reveal" data-delay="1">
+          <div class="card__media"><span class="card__badge">人气之选</span><img src="images/dish-roast.jpg" alt="广式蛋炒饭" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">广式蛋炒饭</h3>
+            <p class="card__text">粒粒分明、色泽金黄，青豆玉米点缀其间，一勺入口全是镬气与满足。</p>
+            <div class="card__meta"><span>广府 · 主食</span><span>★★★★☆</span></div>
+          </div>
+        </article>
+        <article class="card reveal" data-delay="2">
+          <div class="card__media"><span class="card__badge">经典传承</span><img src="images/wonton.jpg" alt="上汤鲜肉云吞" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">上汤鲜肉云吞</h3>
+            <p class="card__text">薄皮裹鲜美肉馅，浮在清甜上汤里。一碗云吞（广东馄饨），是老广从小到大的温柔记忆。</p>
+            <div class="card__meta"><span>广府 · 点心</span><span>★★★★★</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card__media"><img src="images/dish-chicken.jpg" alt="香酥炸鸡" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">香酥炸鸡</h3>
+            <p class="card__text">外皮金黄酥脆、肉汁丰盈，趁热一口，满嘴都是香气。</p>
+            <div class="card__meta"><span>广府 · 热荤</span><span>★★★★☆</span></div>
+          </div>
+        </article>
+        <article class="card reveal" data-delay="1">
+          <div class="card__media"><img src="images/dish-shrimp.jpg" alt="白灼鲜虾" loading="lazy"></div>
+          <div class="card__body">
+            <h3 class="card__title">白灼基围虾</h3>
+            <p class="card__text">"宁可食无菜，不可食无鲜"，白灼最能见虾的鲜甜，蘸点豉油便是人间美味。</p>
+            <div class="card__meta"><span>广府 · 海鲜</span><span>★★★★★</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 品牌故事（分栏 + 悬浮卡） ===== -->
+  <section class="section section--tint">
+    <div class="wrap story">
+      <div class="story__visual reveal">
+        <div class="frame"></div>
+        <img src="images/teatime.jpg" alt="功夫茶" loading="lazy">
+        <div class="floating-card">
+          <span class="em">🍵</span>
+          <div><b>一盅两件</b><small>慢品岭南的悠闲时光</small></div>
+        </div>
+      </div>
+      <div class="reveal" data-delay="1">
+        <span class="eyebrow">Our Story</span>
+        <h2 class="h2">食不厌精<br><span class="accent">脍不厌细</span></h2>
+        <p class="lead">广东人吃东西，讲究的是一个"鲜"字，追求的是一种"精"的态度。无论是选料、刀工还是火候，都藏着代代相传的智慧。</p>
+        <p class="lead" style="margin-top:16px;">粤菜是中国八大菜系之一，融汇广府、潮汕、客家三大风味。它既登得大雅之堂，也扎根市井街头——这，就是它最迷人的地方。</p>
+        <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="map.htm" class="btn btn-primary">寻味三大菜系 <span class="arrow">→</span></a>
+          <a href="about.htm" class="btn btn-ghost">了解我们</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 三大菜系预告 ===== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">Three Flavors</span>
+        <h2 class="h2">一方水土 · <span class="accent">一方味</span></h2>
+        <p class="lead center">广府、潮汕、客家，三种性格，三样风情。</p>
+      </div>
+      <div class="grid grid--3">
+        <a href="map.htm#guangfu" class="region-card reveal">
+          <img src="images/table.jpg" alt="广府菜" loading="lazy">
+          <div class="region-card__body"><span class="tag">YUE · 广府</span><h3>清鲜雅致</h3><p>选料广博、博采中西，讲究清而不淡、鲜而不俗。</p><span class="btn btn-gold" style="padding:10px 22px;">了解广府菜 →</span></div>
+        </a>
+        <a href="map.htm#chaoshan" class="region-card reveal" data-delay="1">
+          <img src="images/dish-shrimp.jpg" alt="潮汕菜" loading="lazy">
+          <div class="region-card__body"><span class="tag">CHAO · 潮汕</span><h3>浓香精细</h3><p>善烹海鲜、精于卤味，一桌潮汕菜就是一场鲜味盛宴。</p><span class="btn btn-gold" style="padding:10px 22px;">了解潮汕菜 →</span></div>
+        </a>
+        <a href="map.htm#kejia" class="region-card reveal" data-delay="2">
+          <img src="images/tofu.jpg" alt="客家菜" loading="lazy">
+          <div class="region-card__body"><span class="tag">KE · 客家</span><h3>醇厚家常</h3><p>咸香肥美、用料扎实，藏着客家人迁徙路上的乡愁。</p><span class="btn btn-gold" style="padding:10px 22px;">了解客家菜 →</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 行动号召 CTA ===== -->
+  <section class="section" style="background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;text-align:center;">
+    <div class="wrap reveal">
+      <span class="eyebrow" style="color:var(--gold-light);">Ready to Explore?</span>
+      <h2 class="h2" style="color:#fff;">肚子里留点位置，<br>跟我去<span style="color:var(--gold-light);">逛吃广东</span></h2>
+      <p class="lead center" style="color:rgba(255,255,255,.85);">从早茶到夜宵，一口一口，吃遍这座岭南。</p>
+      <div style="margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="street.htm" class="btn btn-gold">探访美食街 <span class="arrow">→</span></a>
+        <a href="about.htm" class="btn" style="border-color:#fff;color:#fff;">联系我们</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 页脚 ===== -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a href="index.htm" class="brand"><span class="seal">粵</span><span class="name">粤味<small>YUE WEI · GUANGDONG</small></span></a>
+        <p style="margin-top:18px;">一盅两件，食在广东。用味蕾读懂岭南的烟火与温情。</p>
+      </div>
+      <div><h4>快速导航</h4><ul>
+        <li><a href="index.htm">首页</a></li><li><a href="dishes.htm">经典名菜</a></li>
+        <li><a href="morning-tea.htm">早茶人生</a></li><li><a href="map.htm">寻味地图</a></li>
+      </ul></div>
+      <div><h4>更多精彩</h4><ul>
+        <li><a href="street.htm">街头烟火</a></li><li><a href="about.htm">关于我们</a></li>
+        <li><a href="about.htm#contact">留言反馈</a></li>
+      </ul></div>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="回到顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

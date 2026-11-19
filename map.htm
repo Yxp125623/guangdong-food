@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="广东寻味地图——广府、潮汕、客家三大菜系的风味版图，读懂一方水土养一方人的饮食密码。">
+  <title>寻味地图 · 粤味广东美食网</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero { position: relative; min-height: 56vh; display: flex; align-items: center; color: #fff; padding-top: 100px; overflow: hidden; }
+    .page-hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+    .page-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(20,12,8,.85), rgba(20,12,8,.35)); }
+    .page-hero h1 { font-family: var(--font-serif); font-size: clamp(40px,7vw,76px); margin: 10px 0; letter-spacing: 2px; }
+    .page-hero p { color: rgba(255,255,255,.82); max-width: 560px; }
+    .crumb { font-size: 13px; color: var(--gold-light); letter-spacing: 1px; }
+    .crumb a:hover { text-decoration: underline; }
+
+    .region-block { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 90px; scroll-margin-top: 100px; }
+    .region-block.reverse .region-block__media { order: 2; }
+    .region-block__media { position: relative; }
+    .region-block__media img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow-lg); }
+    .region-block__media .index-num { position: absolute; top: -28px; left: -28px; font-family: var(--font-serif); font-size: 120px; font-weight: 900; color: rgba(193,39,45,.12); z-index: -1; line-height: 1; }
+    .region-block__tag { display: inline-block; padding: 6px 16px; border-radius: 100px; background: var(--red); color: #fff; font-size: 12px; letter-spacing: 2px; font-weight: 700; }
+    .region-block h2 { font-family: var(--font-serif); font-size: clamp(30px,4vw,46px); margin: 16px 0; }
+    .region-block .city { color: var(--gold); font-weight: 700; font-size: 14px; letter-spacing: 1px; margin-bottom: 16px; }
+    .region-block p { color: var(--ink-soft); margin-bottom: 14px; }
+    .region-block .feature-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+    .region-block .feature-tags span { padding: 8px 16px; border-radius: 100px; border: 1.5px solid var(--line); font-size: 13px; font-weight: 600; background: var(--paper); }
+    @media(max-width: 900px){ .region-block{grid-template-columns:1fr;gap:30px;} .region-block.reverse .region-block__media{order:0;} .region-block__media .index-num{font-size:80px;left:-10px;} }
+  </style>
+</head>
+<body>
+
+  <!-- 导航 -->
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a href="index.htm" class="brand"><span class="seal">粵</span><span class="name">粤味<small>YUE WEI · GUANGDONG</small></span></a>
+      <button class="hamburger" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.htm" data-page="index.htm">首页</a></li>
+        <li><a href="dishes.htm" data-page="dishes.htm">经典名菜</a></li>
+        <li><a href="morning-tea.htm" data-page="morning-tea.htm">早茶人生</a></li>
+        <li><a href="map.htm" data-page="map.htm">寻味地图</a></li>
+        <li><a href="street.htm" data-page="street.htm">街头烟火</a></li>
+        <li><a href="about.htm" data-page="about.htm">关于我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 页头 -->
+  <section class="page-hero">
+    <img class="page-hero__bg" src="images/table.jpg" alt="粤菜餐桌">
+    <div class="wrap">
+      <div class="crumb"><a href="index.htm">首页</a> / 寻味地图</div>
+      <h1>寻味广东地图</h1>
+      <p>一省三味，山水有别，饮食亦不同。跟着地图，读懂广东的味觉版图。</p>
+    </div>
+  </section>
+
+  <!-- 三大菜系 -->
+  <section class="section">
+    <div class="wrap">
+
+      <!-- 广府 -->
+      <div class="region-block" id="guangfu">
+        <div class="region-block__media reveal"><span class="index-num">01</span><img src="images/wonton.jpg" alt="广府点心" loading="lazy"></div>
+        <div class="reveal" data-delay="1">
+          <span class="region-block__tag">广府菜 · CANTONESE</span>
+          <h2>清鲜雅致 · 博采众长</h2>
+          <div class="city">核心城市：广州 · 佛山 · 顺德 · 东莞</div>
+          <p>广府菜是粤菜的代表，以广州为中心，讲究"清、鲜、嫩、滑、爽"。选料广博奇杂，天上飞的、地上跑的、水里游的皆可入馔，善用蒸、炖、焗、炒，最大程度保留食材本味。</p>
+          <p>作为千年商都，广州对外开放早，广府菜也善于吸收中西烹饪之长，自成一派。顺德更被称为"世界美食之都"，把"食不厌精"发挥到极致。</p>
+          <div class="feature-tags"><span>清蒸鱼</span><span>白切鸡</span><span>老火汤</span><span>烧鹅</span><span>早茶</span></div>
+        </div>
+      </div>
+
+      <!-- 潮汕 -->
+      <div class="region-block reverse" id="chaoshan">
+        <div class="region-block__media reveal"><span class="index-num">02</span><img src="images/dish-shrimp.jpg" alt="潮汕海鲜" loading="lazy"></div>
+        <div class="reveal" data-delay="1">
+          <span class="region-block__tag">潮汕菜 · CHAOZHOU</span>
+          <h2>浓香精细 · 鲜到极致</h2>
+          <div class="city">核心城市：潮州 · 汕头 · 揭阳</div>
+          <p>潮汕菜以"鲜"立身，善用海鲜，烹饪讲究精细。潮汕人对食材的新鲜度近乎苛刻，一天不吃到海味便浑身不自在。卤水、生腌、鱼饭、牛肉火锅，样样都是远近闻名的美味。</p>
+          <p>一锅老卤是潮汕人家的传家宝，一盅功夫茶是待客的仪式。潮汕味道，浓烈而深情，藏着胶东半岛移民的坚韧与乡愁。</p>
+          <div class="feature-tags"><span>卤水鹅</span><span>牛肉火锅</span><span>生腌海鲜</span><span>鱼饭</span><span>功夫茶</span></div>
+        </div>
+      </div>
+
+      <!-- 客家 -->
+      <div class="region-block" id="kejia">
+        <div class="region-block__media reveal"><span class="index-num">03</span><img src="images/tofu.jpg" alt="客家菜" loading="lazy"></div>
+        <div class="reveal" data-delay="1">
+          <span class="region-block__tag">客家菜 · HAKKA</span>
+          <h2>醇厚咸香 · 家的味道</h2>
+          <div class="city">核心城市：梅州 · 河源 · 惠州</div>
+          <p>客家菜源自中原，随客家人南迁而定居岭南，保留了浓厚的中原饮食遗风。它讲究"咸、香、肥"，用料扎实、分量厚道，善于腌制与焖焗，便于保存也便于在迁徙途中携带。</p>
+          <p>盐焗鸡、酿豆腐、梅菜扣肉、客家盆菜……每一道菜背后，都是一段迁徙的故事，是客家人对故土的深深眷恋。</p>
+          <div class="feature-tags"><span>盐焗鸡</span><span>酿豆腐</span><span>梅菜扣肉</span><span>客家盆菜</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:var(--ink);color:#fff;text-align:center;">
+    <div class="wrap reveal">
+      <span class="eyebrow" style="color:var(--gold-light);">Taste the City</span>
+      <h2 class="h2" style="color:#fff;">地图看完了，<br>不如去<span style="color:var(--gold-light);">街头</span>走一走</h2>
+      <a href="street.htm" class="btn btn-gold" style="margin-top:20px;">探访美食街 <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand"><a href="index.htm" class="brand"><span class="seal">粵</span><span class="name">粤味<small>YUE WEI · GUANGDONG</small></span></a><p style="margin-top:18px;">一盅两件，食在广东。用味蕾读懂岭南的烟火与温情。</p></div>
+      <div><h4>快速导航</h4><ul><li><a href="index.htm">首页</a></li><li><a href="dishes.htm">经典名菜</a></li><li><a href="morning-tea.htm">早茶人生</a></li><li><a href="map.htm">寻味地图</a></li></ul></div>
+      <div><h4>更多精彩</h4><ul><li><a href="street.htm">街头烟火</a></li><li><a href="about.htm">关于我们</a></li><li><a href="about.htm#contact">留言反馈</a></li></ul></div>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="回到顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

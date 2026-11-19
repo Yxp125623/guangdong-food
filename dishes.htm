@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="广东经典名菜图鉴——广府、潮汕、客家招牌菜一网打尽，附菜品故事与风味点评。">
+  <title>经典名菜 · 粤味广东美食网</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 内页通用页头 */
+    .page-hero { position: relative; min-height: 56vh; display: flex; align-items: center; color: #fff; padding-top: 100px; overflow: hidden; }
+    .page-hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+    .page-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(20,12,8,.85), rgba(20,12,8,.35)); }
+    .page-hero h1 { font-family: var(--font-serif); font-size: clamp(40px,7vw,76px); margin: 10px 0; letter-spacing: 2px; }
+    .page-hero p { color: rgba(255,255,255,.82); max-width: 560px; }
+    .crumb { font-size: 13px; color: var(--gold-light); letter-spacing: 1px; }
+    .crumb a:hover { text-decoration: underline; }
+
+    /* 菜品大卡片 */
+    .dish-card { display: grid; grid-template-columns: 260px 1fr; background: var(--paper); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .45s var(--ease), box-shadow .45s var(--ease); }
+    .dish-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .dish-card__img { position: relative; min-height: 220px; overflow: hidden; }
+    .dish-card__img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: transform .7s var(--ease); }
+    .dish-card:hover .dish-card__img img { transform: scale(1.12); }
+    .dish-card__rank { position: absolute; top: 12px; left: 12px; width: 40px; height: 40px; border-radius: 12px; background: var(--gold); color: var(--ink); font-family: var(--font-serif); font-weight: 900; font-size: 20px; display: grid; place-items: center; z-index: 2; }
+    .dish-card__body { padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
+    .dish-card__body h3 { font-family: var(--font-serif); font-size: 26px; margin: 0 0 6px; }
+    .dish-card__body .tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 12px; }
+    .dish-card__body .tags span { font-size: 12px; padding: 4px 12px; border-radius: 100px; background: rgba(193,39,45,.08); color: var(--red); font-weight: 700; }
+    .dish-card__body p { color: var(--ink-soft); margin: 0; font-size: 14px; }
+    .dish-card__foot { margin-top: 16px; display: flex; align-items: center; gap: 8px; color: var(--gold); font-weight: 700; font-size: 13px; }
+    @media(max-width: 720px){ .dish-card{grid-template-columns:1fr;} .dish-card__img{height:220px;min-height:auto;} }
+  </style>
+</head>
+<body>
+
+  <!-- 导航 -->
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a href="index.htm" class="brand"><span class="seal">粵</span><span class="name">粤味<small>YUE WEI · GUANGDONG</small></span></a>
+      <button class="hamburger" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.htm" data-page="index.htm">首页</a></li>
+        <li><a href="dishes.htm" data-page="dishes.htm">经典名菜</a></li>
+        <li><a href="morning-tea.htm" data-page="morning-tea.htm">早茶人生</a></li>
+        <li><a href="map.htm" data-page="map.htm">寻味地图</a></li>
+        <li><a href="street.htm" data-page="street.htm">街头烟火</a></li>
+        <li><a href="about.htm" data-page="about.htm">关于我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 页头 -->
+  <section class="page-hero">
+    <img class="page-hero__bg" src="images/chef.jpg" alt="粤菜大厨">
+    <div class="wrap">
+      <div class="crumb"><a href="index.htm">首页</a> / 经典名菜</div>
+      <h1>经典名菜图鉴</h1>
+      <p>火候之间见真章，一菜一味总关情。点击分类，寻找属于你的那口岭南味道。</p>
+    </div>
+  </section>
+
+  <!-- 筛选 + 列表 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="filters reveal">
+        <button class="filter-btn active" data-filter="all">全部名菜</button>
+        <button class="filter-btn" data-filter="guangfu">广府菜</button>
+        <button class="filter-btn" data-filter="chaoshan">潮汕菜</button>
+        <button class="filter-btn" data-filter="kejia">客家菜</button>
+        <button class="filter-btn" data-filter="dimsum">点心小吃</button>
+      </div>
+
+      <div class="grid" style="gap:24px;">
+
+        <article class="dish-card reveal" data-category="dimsum">
+          <div class="dish-card__img"><span class="dish-card__rank">01</span><img src="images/hero-dimsum.jpg" alt="水晶虾饺皇" loading="lazy"></div>
+          <div class="dish-card__body"><h3>水晶虾饺皇</h3>
+            <div class="tags"><span>广府点心</span><span>蒸</span><span>鲜虾</span></div>
+            <p>十三道褶皱是茶楼师傅的功底，薄皮里藏着整颗弹牙的鲜虾，是"一盅两件"里永远的主角。</p>
+            <div class="dish-card__foot">★ 风味：清鲜弹嫩　|　推荐度 98%</div>
+          </div>
+        </article>
+
+        <article class="dish-card reveal" data-category="dimsum">
+          <div class="dish-card__img"><span class="dish-card__rank">02</span><img src="images/wonton.jpg" alt="上汤鲜肉云吞" loading="lazy"></div>
+          <div class="dish-card__body"><h3>上汤鲜肉云吞</h3>
+            <div class="tags"><span>广府点心</span><span>煮</span><span>鲜肉</span></div>
+            <p>云吞即广东人的馄饨。薄皮裹着鲜美肉馅，浮在清甜的上汤里，撒一把葱花韭黄，鲜得恰到好处。</p>
+            <div class="dish-card__foot">★ 风味：汤清味鲜　|　推荐度 97%</div>
+          </div>
+        </article>
+
+        <article class="dish-card reveal" data-category="guangfu">
+          <div class="dish-card__img"><span class="dish-card__rank">03</span><img src="images/dish-chicken.jpg" alt="香酥炸鸡" loading="lazy"></div>
+          <div class="dish-card__body"><h3>香酥炸鸡</h3>
+            <div class="tags"><span>广府小食</span><span>炸</span><span>外酥里嫩</span></div>
+            <p>金黄酥脆的外皮下锁着丰盈肉汁，趁热一口咬下，"咔嚓"一声满嘴留香，是街巷里最解馋的美味。</p>
+            <div class="dish-card__foot">★ 风味：皮脆肉嫩　|　推荐度 95%</div>
+          </div>
+        </article>
+
+        <article class="dish-card reveal" data-category="chaoshan">
+          <div class="dish-card__img"><span class="dish-card__rank">04</span><img src="images/dish-shrimp.jpg" alt="白灼基围虾" loading="lazy"></div>
+          <div class="dish-card__body"><h3>白灼基围虾</h3>
+            <div class="tags"><span>潮汕海鲜</span><span>灼</span><span>鲜甜</span></div>
+            <p>好虾只需白灼。沸水里一番翻滚，虾身弯成金黄的弧度，蘸点豉油，鲜甜弹牙全在那一口。</p>
+            <div class="dish-card__foot">★ 风味：鲜甜弹牙　|　推荐度 96%</div>
+          </div>
+        </article>
+
+        <article class="dish-card reveal" data-category="chaoshan">
+          <div class="dish-card__img"><span class="dish-card__rank">05</span><img src="images/beefnoodle.jpg" alt="潮汕牛肉汤粉" loading="lazy"></div>
+          <div class="dish-card__body"><h3>潮汕牛肉汤粉</h3>
+            <div class="tags"><span>潮汕主食</span><span>汆</span><span>牛骨汤</span></div>
+            <p>清甜的牛骨汤底，浇在爽滑的粿条上，铺满现汆的鲜牛肉，撒一把芹菜粒，是潮汕人一天的开始的味道。</p>
+            <div class="dish-card__foot">★ 风味：汤鲜肉嫩　|　推荐度 94%</div>
+          </div>
+        </article>
+
+        <article class="dish-card reveal" data-category="dimsum">
+          <div class="dish-card__img"><span class="dish-card__rank">06</span><img src="images/dish-rice.jpg" alt="海鲜炒饭" loading="lazy"></div>
+          <div class="dish-card__body"><h3>海鲜炒饭</h3>
+            <div class="tags"><span>主食</span><span>炒</span><span>海鲜</span></div>
+            <p>粒粒分明的米饭裹着鲜虾与蛋香，挤一瓣柠檬提鲜，锅气十足。最简单的一碗饭，最见师傅的功力。</p>
+            <div class="dish-card__foot">★ 风味：锅气焦香　|　推荐度 92%</div>
+          </div>
+        </article>
+
+        <article class="dish-card reveal" data-category="guangfu">
+          <div class="dish-card__img"><span class="dish-card__rank">07</span><img src="images/friednoodle.jpg" alt="豉油皇炒面" loading="lazy"></div>
+          <div class="dish-card__body"><h3>豉油皇炒面</h3>
+            <div class="tags"><span>广府主食</span><span>炒</span><span>锅气</span></div>
+            <p>考验镬气的一道经典。细面炒至根根上色、爽滑不腻，配爽脆豆芽，讲究的是"镬气足、色油亮"。</p>
+            <div class="dish-card__foot">★ 风味：镬气焦香　|　推荐度 97%</div>
+          </div>
+        </article>
+
+        <article class="dish-card reveal" data-category="kejia">
+          <div class="dish-card__img"><span class="dish-card__rank">08</span><img src="images/tofu.jpg" alt="客家煎豆腐" loading="lazy"></div>
+          <div class="dish-card__body"><h3>客家煎豆腐</h3>
+            <div class="tags"><span>客家菜</span><span>煎</span><span>豆腐</span></div>
+            <p>厚切豆腐下锅慢煎至两面金黄，外香内嫩、豆味醇厚，配一碟蘸料，是客家人朴素实在的家常味。</p>
+            <div class="dish-card__foot">★ 风味：外香内嫩　|　推荐度 93%</div>
+          </div>
+        </article>
+
+        <article class="dish-card reveal" data-category="guangfu">
+          <div class="dish-card__img"><span class="dish-card__rank">09</span><img src="images/dish-noodle.jpg" alt="酸辣汤粉" loading="lazy"></div>
+          <div class="dish-card__body"><h3>酸辣汤粉</h3>
+            <div class="tags"><span>风味小食</span><span>煮</span><span>酸辣</span></div>
+            <p>红亮的酸辣汤底，配爽滑的米线、酥香花生与一把香菜，酸得开胃、辣得过瘾，一口下去浑身通透。</p>
+            <div class="dish-card__foot">★ 风味：酸辣鲜香　|　推荐度 95%</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand"><a href="index.htm" class="brand"><span class="seal">粵</span><span class="name">粤味<small>YUE WEI · GUANGDONG</small></span></a><p style="margin-top:18px;">一盅两件，食在广东。用味蕾读懂岭南的烟火与温情。</p></div>
+      <div><h4>快速导航</h4><ul><li><a href="index.htm">首页</a></li><li><a href="dishes.htm">经典名菜</a></li><li><a href="morning-tea.htm">早茶人生</a></li><li><a href="map.htm">寻味地图</a></li></ul></div>
+      <div><h4>更多精彩</h4><ul><li><a href="street.htm">街头烟火</a></li><li><a href="about.htm">关于我们</a></li><li><a href="about.htm#contact">留言反馈</a></li></ul></div>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="回到顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

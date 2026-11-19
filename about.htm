@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="关于粤味广东美食网——我们的创作初衷、团队成员与联系方式，欢迎交流分享岭南美食文化。">
+  <title>关于我们 · 粤味广东美食网</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero { position: relative; min-height: 56vh; display: flex; align-items: center; color: #fff; padding-top: 100px; overflow: hidden; }
+    .page-hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+    .page-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(20,12,8,.85), rgba(20,12,8,.35)); }
+    .page-hero h1 { font-family: var(--font-serif); font-size: clamp(40px,7vw,76px); margin: 10px 0; letter-spacing: 2px; }
+    .page-hero p { color: rgba(255,255,255,.82); max-width: 560px; }
+    .crumb { font-size: 13px; color: var(--gold-light); letter-spacing: 1px; }
+    .crumb a:hover { text-decoration: underline; }
+
+    /* 团队卡 */
+    .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
+    .member { text-align: center; padding: 30px 18px; background: var(--paper); border-radius: 20px; box-shadow: var(--shadow-sm); transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+    .member:hover { transform: translateY(-10px); box-shadow: var(--shadow-md); }
+    .member__avatar { width: 84px; height: 84px; margin: 0 auto 16px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-serif); font-size: 34px; font-weight: 800; color: #fff; background: linear-gradient(135deg, var(--red-bright), var(--red-deep)); box-shadow: 0 8px 20px rgba(193,39,45,.3); }
+    .member:nth-child(2) .member__avatar { background: linear-gradient(135deg, var(--gold-light), var(--gold)); color: var(--ink); }
+    .member:nth-child(3) .member__avatar { background: linear-gradient(135deg, #3a7d5d, #1f5239); }
+    .member:nth-child(4) .member__avatar { background: linear-gradient(135deg, #4a6fa5, #2b4873); }
+    .member h4 { font-size: 18px; margin: 0 0 4px; }
+    .member .role { color: var(--red); font-size: 13px; font-weight: 700; }
+    .member p { color: var(--ink-soft); font-size: 13px; margin: 10px 0 0; }
+
+    /* 联系区 */
+    .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+    .contact-info .info-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 26px; }
+    .contact-info .info-item .ic { width: 48px; height: 48px; flex: 0 0 48px; border-radius: 14px; background: rgba(193,39,45,.08); color: var(--red); display: grid; place-items: center; font-size: 22px; }
+    .contact-info .info-item h4 { margin: 0 0 4px; font-size: 16px; }
+    .contact-info .info-item p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+    .contact-form-box { background: var(--paper); padding: 36px; border-radius: 22px; box-shadow: var(--shadow-md); }
+    @media(max-width: 900px){ .team-grid{grid-template-columns:repeat(2,1fr);} .contact-wrap{grid-template-columns:1fr;gap:30px;} }
+    @media(max-width: 480px){ .team-grid{grid-template-columns:1fr;} .contact-form-box{padding:24px;} }
+  </style>
+</head>
+<body>
+
+  <!-- 导航 -->
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a href="index.htm" class="brand"><span class="seal">粵</span><span class="name">粤味<small>YUE WEI · GUANGDONG</small></span></a>
+      <button class="hamburger" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.htm" data-page="index.htm">首页</a></li>
+        <li><a href="dishes.htm" data-page="dishes.htm">经典名菜</a></li>
+        <li><a href="morning-tea.htm" data-page="morning-tea.htm">早茶人生</a></li>
+        <li><a href="map.htm" data-page="map.htm">寻味地图</a></li>
+        <li><a href="street.htm" data-page="street.htm">街头烟火</a></li>
+        <li><a href="about.htm" data-page="about.htm">关于我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 页头 -->
+  <section class="page-hero">
+    <img class="page-hero__bg" src="images/teatime.jpg" alt="功夫茶">
+    <div class="wrap">
+      <div class="crumb"><a href="index.htm">首页</a> / 关于我们</div>
+      <h1>关于粤味</h1>
+      <p>一群热爱美食的年轻人，用代码写下对岭南味道的敬意。</p>
+    </div>
+  </section>
+
+  <!-- 创作初衷 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head center reveal"><span class="eyebrow">About Us</span><h2 class="h2">因为热爱，<span class="accent">所以记录</span></h2></div>
+      <div class="grid grid--2 reveal" style="gap:50px;align-items:center;">
+        <div>
+          <p class="lead">广东，是中国最会吃、也最懂吃的省份之一。这里的一菜一汤，藏着地理的密码、历史的沉淀，更藏着岭南人对待生活的态度。</p>
+          <p class="lead" style="margin-top:16px;">我们制作这个网站，是想把这份"食在广东"的骄傲，用网页的方式呈现出来。从技术到内容，从设计到文案，每一处都是我们学习前端、探索岭南文化的见证。</p>
+          <p class="lead" style="margin-top:16px;">希望你在浏览时，不仅能看到诱人的美食，更能感受到那份独属于广东的烟火气与人情味。</p>
+        </div>
+        <div class="reveal" data-delay="1"><img src="images/table.jpg" alt="美食餐桌" style="border-radius:24px;box-shadow:var(--shadow-lg);width:100%;aspect-ratio:4/3;object-fit:cover;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 团队 -->
+  <section class="section section--tint">
+    <div class="wrap">
+      <div class="sec-head center reveal"><span class="eyebrow">Our Team</span><h2 class="h2">团队<span class="accent">成员</span></h2><p class="lead center">一份作品，凝聚着每个人的努力。</p></div>
+      <div class="team-grid">
+        <div class="member reveal"><div class="member__avatar">组</div><h4>小组长</h4><div class="role">统筹 · 策划</div><p>负责整体规划与进度协调，把控网站主题与方向。</p></div>
+        <div class="member reveal" data-delay="1"><div class="member__avatar">设</div><h4>设计师</h4><div class="role">UI 设计 · 文案</div><p>负责视觉设计、配色排版与景点美食文案撰写。</p></div>
+        <div class="member reveal" data-delay="2"><div class="member__avatar">码</div><h4>前端开发</h4><div class="role">HTML · CSS</div><p>负责页面结构搭建与样式实现，打造精美界面。</p></div>
+        <div class="member reveal" data-delay="3"><div class="member__avatar">技</div><h4>交互开发</h4><div class="role">JavaScript · 测试</div><p>负责交互功能开发与多端测试，保障流畅体验。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="sec-head center reveal"><span class="eyebrow">Get in Touch</span><h2 class="h2">和我们<span class="accent">聊聊</span></h2><p class="lead center">有建议、有故事，或者想分享你心中的广东味道？欢迎留言。</p></div>
+      <div class="contact-wrap">
+        <div class="contact-info reveal">
+          <div class="info-item"><div class="ic">📍</div><div><h4>所在地</h4><p>中国 · 广东</p></div></div>
+          <div class="info-item"><div class="ic">🕐</div><div><h4>响应时间</h4><p>我们会在 2 个工作日内回复你的留言</p></div></div>
+        </div>
+
+        <form class="contact-form-box reveal" id="contactForm" novalidate>
+          <h3 style="font-family:var(--font-serif);font-size:24px;margin:0 0 22px;">给我们留言</h3>
+          <div class="form-group">
+            <label for="name">你的称呼</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="请输入你的名字">
+            <div class="form-error" id="err-name">请填写你的称呼</div>
+          </div>
+          <div class="form-group">
+            <label for="email">电子邮箱</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+            <div class="form-error" id="err-email">请填写有效的邮箱地址</div>
+          </div>
+          <div class="form-group">
+            <label for="message">留言内容</label>
+            <textarea class="form-control" id="message" name="message" placeholder="说说你想说的话……"></textarea>
+            <div class="form-error" id="err-msg">请填写留言内容</div>
+          </div>
+          <div class="form-ok" id="formOk">✓ 留言已提交，感谢你的分享！我们会尽快回复。</div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px;">提交留言 <span class="arrow">→</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand"><a href="index.htm" class="brand"><span class="seal">粵</span><span class="name">粤味<small>YUE WEI · GUANGDONG</small></span></a><p style="margin-top:18px;">一盅两件，食在广东。用味蕾读懂岭南的烟火与温情。</p></div>
+      <div><h4>快速导航</h4><ul><li><a href="index.htm">首页</a></li><li><a href="dishes.htm">经典名菜</a></li><li><a href="morning-tea.htm">早茶人生</a></li><li><a href="map.htm">寻味地图</a></li></ul></div>
+      <div><h4>更多精彩</h4><ul><li><a href="street.htm">街头烟火</a></li><li><a href="about.htm">关于我们</a></li><li><a href="about.htm#contact">留言反馈</a></li></ul></div>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="回到顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

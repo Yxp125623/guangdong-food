@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="广东街头烟火——北京路、上下九、沙面、西华路……在深夜的美食街里，寻找最地道的广东味道。">
+  <title>街头烟火 · 粤味广东美食网</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero { position: relative; min-height: 56vh; display: flex; align-items: center; color: #fff; padding-top: 100px; overflow: hidden; }
+    .page-hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+    .page-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(20,12,8,.85), rgba(20,12,8,.35)); }
+    .page-hero h1 { font-family: var(--font-serif); font-size: clamp(40px,7vw,76px); margin: 10px 0; letter-spacing: 2px; }
+    .page-hero p { color: rgba(255,255,255,.82); max-width: 560px; }
+    .crumb { font-size: 13px; color: var(--gold-light); letter-spacing: 1px; }
+    .crumb a:hover { text-decoration: underline; }
+
+    /* 街区卡片 */
+    .street-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .street-card { position: relative; min-height: 300px; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-md); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+    .street-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+    .street-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+    .street-card:hover img { transform: scale(1.1); }
+    .street-card::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(20,12,8,.9), rgba(20,12,8,.05) 60%); }
+    .street-card__body { position: absolute; inset: auto 0 0 0; padding: 28px; color: #fff; z-index: 2; }
+    .street-card__body .loc { font-size: 12px; color: var(--gold-light); letter-spacing: 2px; font-weight: 700; }
+    .street-card__body h3 { font-family: var(--font-serif); font-size: 28px; margin: 6px 0 8px; }
+    .street-card__body p { margin: 0; color: rgba(255,255,255,.8); font-size: 14px; }
+    @media(max-width: 720px){ .street-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+  <!-- 导航 -->
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a href="index.htm" class="brand"><span class="seal">粵</span><span class="name">粤味<small>YUE WEI · GUANGDONG</small></span></a>
+      <button class="hamburger" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.htm" data-page="index.htm">首页</a></li>
+        <li><a href="dishes.htm" data-page="dishes.htm">经典名菜</a></li>
+        <li><a href="morning-tea.htm" data-page="morning-tea.htm">早茶人生</a></li>
+        <li><a href="map.htm" data-page="map.htm">寻味地图</a></li>
+        <li><a href="street.htm" data-page="street.htm">街头烟火</a></li>
+        <li><a href="about.htm" data-page="about.htm">关于我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 页头 -->
+  <section class="page-hero">
+    <img class="page-hero__bg" src="images/street2.jpg" alt="美食街夜景">
+    <div class="wrap">
+      <div class="crumb"><a href="index.htm">首页</a> / 街头烟火</div>
+      <h1>深夜街头 · 烟火人间</h1>
+      <p>最动人的味道，往往不在高档酒楼，而在那些灯火通明的街巷深处。</p>
+    </div>
+  </section>
+
+  <!-- 名街推荐 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">Food Streets</span><h2 class="h2">广州<span class="accent">觅食地图</span></h2><p class="lead">几条老街，藏着最地道的市井滋味。</p></div>
+      <div class="street-grid">
+        <div class="street-card reveal"><img src="images/street.jpg" alt="北京路" loading="lazy"><div class="street-card__body"><span class="loc">越秀 · 北京路</span><h3>千年古道上的小吃</h3><p>步行街脚下是叠压千年的古道，两侧云吞面、牛杂、双皮奶飘香，越夜越热闹。</p></div></div>
+        <div class="street-card reveal" data-delay="1"><img src="images/table.jpg" alt="上下九" loading="lazy"><div class="street-card__body"><span class="loc">荔湾 · 上下九</span><h3>西关味道集中营</h3><p>骑楼底下，艇仔粥、肠粉、云吞面样样俱全，是老广州最经典的觅食路线。</p></div></div>
+        <div class="street-card reveal"><img src="images/wonton.jpg" alt="西华路" loading="lazy"><div class="street-card__body"><span class="loc">荔湾 · 西华路</span><h3>老广私藏的早餐街</h3><p>短短几百米挤满老字号，云吞、濑粉、豆浆油条，一碗入魂，是本地人的心头好。</p></div></div>
+        <div class="street-card reveal" data-delay="1"><img src="images/chef.jpg" alt="江南西" loading="lazy"><div class="street-card__body"><span class="loc">海珠 · 江南西</span><h3>潮味与网红交织</h3><p>传统糖水铺与新派餐厅比邻，从潮州粿条到创意甜品，年轻人口味的天堂。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 灯箱画廊 -->
+  <section class="section section--tint">
+    <div class="wrap">
+      <div class="sec-head center reveal"><span class="eyebrow">Street Gallery</span><h2 class="h2">镜头里的<span class="accent">烟火气</span></h2><p class="lead center">点击图片，放大看看这些让人垂涎的街头美味。</p></div>
+      <div class="masonry">
+        <figure data-gallery data-caption="晶莹剔透的虾饺，是街头茶点的明星"><img src="images/hero-dimsum.jpg" alt="虾饺" loading="lazy"><figcaption>虾饺 · 晶莹之美</figcaption></figure>
+        <figure data-gallery data-caption="粒粒分明的广式蛋炒饭，镬气十足"><img src="images/dish-roast.jpg" alt="广式蛋炒饭" loading="lazy"><figcaption>广式蛋炒饭 · 锅气十足</figcaption></figure>
+        <figure data-gallery data-caption="酸辣开胃的汤粉，街头最痛快的一碗"><img src="images/dish-noodle.jpg" alt="酸辣汤粉" loading="lazy"><figcaption>酸辣汤粉 · 一碗痛快</figcaption></figure>
+        <figure data-gallery data-caption="酥香炸物，街头最解馋的小食"><img src="images/dish-chicken.jpg" alt="炸物" loading="lazy"><figcaption>酥炸 · 香脆可口</figcaption></figure>
+        <figure data-gallery data-caption="白灼基围虾，鲜甜是岭南的馈赠"><img src="images/dish-shrimp.jpg" alt="海鲜" loading="lazy"><figcaption>海鲜 · 岭南馈赠</figcaption></figure>
+        <figure data-gallery data-caption="一盏清茶，解腻也解忧"><img src="images/teatime.jpg" alt="茶" loading="lazy"><figcaption>清茶 · 解腻解忧</figcaption></figure>
+        <figure data-gallery data-caption="热闹的餐桌，藏着人情味"><img src="images/table.jpg" alt="餐桌" loading="lazy"><figcaption>餐桌 · 人情滋味</figcaption></figure>
+        <figure data-gallery data-caption="一桌丰盛，是团聚的欢喜"><img src="images/street2.jpg" alt="聚餐" loading="lazy"><figcaption>团聚 · 一桌欢喜</figcaption></figure>
+        <figure data-gallery data-caption="大厨的巧手，成就一道道美味"><img src="images/chef.jpg" alt="大厨" loading="lazy"><figcaption>巧手 · 匠心独运</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 灯箱容器 -->
+  <div class="lightbox" role="dialog" aria-label="图片预览">
+    <button class="lightbox__close" aria-label="关闭">×</button>
+    <img src="" alt="预览图">
+    <div class="lightbox__cap"></div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand"><a href="index.htm" class="brand"><span class="seal">粵</span><span class="name">粤味<small>YUE WEI · GUANGDONG</small></span></a><p style="margin-top:18px;">一盅两件，食在广东。用味蕾读懂岭南的烟火与温情。</p></div>
+      <div><h4>快速导航</h4><ul><li><a href="index.htm">首页</a></li><li><a href="dishes.htm">经典名菜</a></li><li><a href="morning-tea.htm">早茶人生</a></li><li><a href="map.htm">寻味地图</a></li></ul></div>
+      <div><h4>更多精彩</h4><ul><li><a href="street.htm">街头烟火</a></li><li><a href="about.htm">关于我们</a></li><li><a href="about.htm#contact">留言反馈</a></li></ul></div>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="回到顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>
